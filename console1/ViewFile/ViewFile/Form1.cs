@@ -25,8 +25,19 @@ namespace ViewFile
 
         private void showButton_Click(object sender, EventArgs e)
         {
-            TextReader tr = new StreamReader(locationTextBox.Text);
-            displayTextBox.Text = tr.ReadToEnd();
+            try
+            {
+              TextReader tr = new StreamReader(locationTextBox.Text);
+              try
+              { displayTextBox.Text = tr.ReadToEnd(); }
+              catch (Exception ex)
+              { MessageBox.Show(ex.Message); }
+              finally
+              { tr.Close(); }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
+     
         }
     }
 }
