@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace Serialize_People
 {
-    class Person
+    [Serializable] class Person
     {
         public string name;
         public DateTime dateOfBirth;
