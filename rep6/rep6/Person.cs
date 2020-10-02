@@ -18,7 +18,7 @@ namespace rep6
         return dateOfBirth.Year;
       }
       set {
-        //dateOfBirth.Year = value;
+         dateOfBirth = dateOfBirth.AddYears(value - dateOfBirth.Year);
       }
     }
     public Person(string _name, string _surname, DateTime _dateOfBirth)
